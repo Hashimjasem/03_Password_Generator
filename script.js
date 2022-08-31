@@ -51,8 +51,21 @@ if(!includeNumbers && !includeLowercase && !includeUppercase && !includeSymbols)
 
 
 //generate password based on criterias selected and length
-
+let charset = "";
 //1. create the character set based on criterias
+if(includeLowercase){
+  charset = charset + "abcdefghijklmnopqrstuvwxyz"
+}
+if(includeUppercase){
+  charset = charset + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+}
+if(includeNumbers){
+  charset = charset + "1234567890"
+}
+if(includeSymbols){
+  charset = charset + "!@#$%^&*()_+=-][\|}{';:/?.>,<`~"
+}
+
 //2. loop for 'length' times, each iteration grab a random char and append to an accumulator
 //3. 
 
