@@ -9,6 +9,11 @@ function generatePassword() {
 const length = Number(prompt("how many Characters?"));
 
 //if user types in random rubish, handle it
+if(isNaN(length)){
+  alert("Please enter number of desired Characters")
+  return;
+
+}
 //if left blank, handle it
 //if length is less than 8, handle it
 
@@ -62,6 +67,10 @@ const includeSymbols = confirm("do You want symbols?");
 // Write password to the #password input
 function writePassword(event) {
   const password = generatePassword();
+
+  if(password === undefined){
+    return;
+  }
   const passwordText = document.querySelector("#password");
 
   passwordText.value = password;
