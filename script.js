@@ -12,16 +12,18 @@ const length = Number(prompt("how many Characters?"));
 if(isNaN(length)){
   alert("Please enter number of desired Characters")
   return;
-
 }
+
 //if left blank, handle it
+
+
+
 //if length is less than 8, handle it
-
-
-
-
-//check for minimum lenth of 8
-if(length < 8){}
+//check for minimum lenth of 8 and max of 128
+if(length < 8 || length> 128){
+  alert("Please enter a length between 8-128");
+  return;
+}
 
 
 
@@ -37,7 +39,12 @@ const includeNumbers = confirm("do You want numbers?");
 //special symbols
 const includeSymbols = confirm("do You want symbols?");
 
-
+//make sure at least 1 criteria is selected
+//detect if all are false
+if(!includeNumbers && !includeLowercase && !includeUppercase && !includeSymbols){
+  alert("please include atleast one criteria");
+  return;
+}
 
 
 
