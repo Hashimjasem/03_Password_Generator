@@ -66,14 +66,12 @@ if(includeSymbols){
   charset = charset + "!@#$%^&*()_+=-][\|}{';:/?.>,<`~"
 }
 
+let password = "";
 //2. loop for 'length' times, each iteration grab a random char and append to an accumulator
-//3. 
-
-//bank of characters
-//abcde....ABCDE....1234....
-
-//length
-//loop
+for (let ii = 0; ii < length; ii++){
+  const randomChar = charset[ Math.floor( Math.random() * charset.length ) ]
+  password = password + randomChar;
+}
 
 
 //password is a set off random characters
@@ -81,7 +79,7 @@ if(includeSymbols){
 
 
 // return the password
-
+return password;
 }
 
 // Write password to the #password input
